@@ -45,9 +45,7 @@ change n_code in preprocess.py to 80\
 ### Network achitecture
 My network architecture consists mainly of a deberta encoder and a GRU layer; an overview is
 shown in the Figure below. First, markdown blocks and code blocks are tokenized and concatenated.
-During training, 10 markdown blocks with 40 code blocks with a max length of 1600 are used
-first and then the weights are retrained with 20 markdown blocks with 80 code blocks with a
-max length of 3160. Following that, a deberta large encoder is used to encode the text, and
+During training, 10 markdown blocks with 20 code blocks with a max length of 1100 are used first, then 10 markdown blocks with 40 code blocks with a max length of 1600 are used to train another 5 epochs, and then the weights are retrained again with 20 markdown blocks with 80 code blocks with a max length of 3160.. Following that, a deberta large encoder is used to encode the text, and
 then each markdown and code block is pooled. Next, features are concatenated to pooled feature
 vectors (discussed in a later section). Each markdown block feature vector is then concatenated
 to the sequence of code block feature vectors, and then an GRU network is used to predict the
