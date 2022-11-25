@@ -83,7 +83,7 @@ result, the model never sees all the markdown blocks at the same time. To counte
 do test time augmentation by randomly shuffling the markdown cells each time a new inference
 cycle is started and therefore the model will see different combinations of markdown cells in
 long sequences. For shorter sequences, this simply changes the order of markdown cells during
-inference. For my best inference notebook, a total of 3 inference cycles are used (3xTTA).3xTTA improves from score from 0.9067 to 0.9100.
+inference. For my best inference notebook, a total of 3 inference cycles are used (3xTTA). 3xTTA improves from score from 0.9067 to 0.9100.
 
 ### What didn’t work
 1. Trying to translate markdown cells that are not in English did not result in any improve-
