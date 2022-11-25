@@ -94,7 +94,6 @@ concatenated code and markdown cells.
 4. Maxpooling instead of meanpooling
 
 ### References
-I used the solution from Khoi Nguyen as a baseline: https://www.kaggle.com/competitions/
-AI4Code/discussion/326970.
+I used the solution from Khoi Nguyen as a baseline: https://www.kaggle.com/competitions/AI4Code/discussion/326970.
 
 
