@@ -32,3 +32,17 @@ third stage:\
 change n_code in preprocess.py to 80\
 `python preprocess.py`\
 `bash tta_3rd.sh`
+
+## Solution details
+
+### Network achitecture
+
+[https://github.com/Shujun-He/Google_AI4code_6th_place_solution/blob/main/graphics/architecture.png]
+
+![alt text](https://github.com/Shujun-He/Google_AI4code_6th_place_solution/blob/main/graphics/architecture.png)
+
+
+
+
+
+
