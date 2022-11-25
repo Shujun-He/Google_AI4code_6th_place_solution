@@ -40,7 +40,7 @@ change n_code in preprocess.py to 80\
 
 ![alt text](https://github.com/Shujun-He/Google_AI4code_6th_place_solution/blob/main/graphics/relative2absolute.png)
 
-(I typed this in latex and just screenshot it. Sorry for the quality)
+(I typed this in latex and just screenshot it. Sorry for the quality. For a better version, see `write_up_6th_solution.pdf`)
 
 ### Network achitecture
 My network architecture consists mainly of a deberta encoder and a GRU layer; an overview is
