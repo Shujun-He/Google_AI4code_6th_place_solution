@@ -66,3 +66,35 @@ The following features are used:
 
 These features are concatenated with pooled feature vectors of markdown cells. Pooled code
 cells feature vectors are also concatenated with their absolute positions.
+
+### MLM
+Masked langauge modeling pretraining is used, where the input text is arranged in the same
+manner as in finetuning. MLM probability was set to 0.15 and the model is trained for 10
+epochs. A max sequence length of 768 is used with at most 5 markdown cells and 10 code cells.
+
+### Inference and TTA
+During inference, I tried to predict positions of as many markdown cells as possible. I was
+able to use a max length of 4250 with 100 code blocks and 30 markdown blocks. Code blocks
+have at most 26 tokens and markdown blocks 64. Notebooks are sorted based on number of
+markdown/cell blocks to reduce inference time. Because for longer sequences where there are
+more than 30 markdown blocks, I cannot make predictions for all of them at the same time,
+and multiple forward passes are needed to make predictions for all markdown blocks. As a
+result, the model never sees all the markdown blocks at the same time. To counteract that, I
+do test time augmentation by randomly shuffling the markdown cells each time a new inference
+cycle is started and therefore the model will see different combinations of markdown cells in
+long sequences. For shorter sequences, this simply changes the order of markdown cells during
+inference. For my best inference notebook, a total of 3 inference cycles are used (3xTTA).
+
+### What didn’t work
+1. Trying to translate markdown cells that are not in English did not result in any improve-
+ments for me. I tried facebook’s m2m100 418M.\
+2. Separating code and markdown cells and doing two forward passes through deberta for
+concatenated code and markdown cells.\
+3. Cubert did not work because I couldn’t fix the tokenizer.\
+4. Maxpooling instead of meanpooling
+
+### References
+I used the solution from Khoi Nguyen as a baseline: https://www.kaggle.com/competitions/
+AI4Code/discussion/326970.
+
+
