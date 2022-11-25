@@ -35,9 +35,13 @@ change n_code in preprocess.py to 80\
 
 ## Solution details
 
+### Relative to absolute position prediction
+
+![alt text](https://github.com/Shujun-He/Google_AI4code_6th_place_solution/blob/main/graphics/relative2absolute.png)
+
+
 ### Network achitecture
 
-[https://github.com/Shujun-He/Google_AI4code_6th_place_solution/blob/main/graphics/architecture.png]
 
 ![alt text](https://github.com/Shujun-He/Google_AI4code_6th_place_solution/blob/main/graphics/architecture.png)
 
