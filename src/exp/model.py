@@ -8,7 +8,7 @@ class MarkdownModel(nn.Module):
     def __init__(self, model_path):
         super(MarkdownModel, self).__init__()
         #model = AutoModel.from_pretrained(model_path)
-        model = AutoModelWithLMHead.from_pretrained('microsoft/deberta-v3-small')
+        model = AutoModelWithLMHead.from_pretrained(model_path)
         model.load_state_dict(torch.load('pytorch_model.bin'))
         self.model_path=model_path
         self.embeddings=model.deberta.embeddings

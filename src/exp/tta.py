@@ -24,6 +24,7 @@ parser.add_argument('--val_mark_path', type=str, default='./data/val_mark.csv')
 parser.add_argument('--val_features_path', type=str, default='./data/val_fts.json')
 parser.add_argument('--val_path', type=str, default="./data/val.csv")
 parser.add_argument('--load_weights_from', type=str, default="")
+parser.add_argument('--out_path', type=str, default="output")
 
 parser.add_argument('--md_max_len', type=int, default=64)
 parser.add_argument('--total_max_len', type=int, default=512)
@@ -54,7 +55,7 @@ model = model.to(device)
 
 #exit()
 
-os.system("mkdir ./outputs")
+os.system(f"mkdir {args.out_path}")
 #os.makedirs("outputs", mode = 0o777, exist_ok = True)
 data_dir = Path('../../input/')
 os.environ["TORCH_DISTRIBUTED_DEBUG"]="INFO" #0,1,2,3 for four gpu
@@ -190,9 +191,9 @@ val_loader = DataLoader(val_ds, batch_size=args.batch_size, shuffle=False, num_w
 # plt.show()
 # exit()
 
-os.system("mkdir logs")
+#os.system("mkdir logs")
 columns=['epoch','train_loss','val_score']
-logger=CSVLogger(columns,f"logs/log.csv")
+logger=CSVLogger(columns,f"{args.out_path}/log.csv")
 
 
 def validate(model, val_loader, accelerator):
@@ -410,7 +411,7 @@ def train(model, train_loader, val_loader, epochs, accelerator):
             exit()
         #exit()
         #torch.save(model.state_dict(), f"./outputs/model{e}.bin")
-        accelerator.save(accelerator.unwrap_model(model).state_dict(),f"./outputs/model{e}.bin")
+        accelerator.save(accelerator.unwrap_model(model).state_dict(),f"./{args.out_path}/model{e}.bin")
         #accelerator.wait_for_everyone()
         # if e==2:
 

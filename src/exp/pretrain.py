@@ -17,7 +17,7 @@ from logger import *
 import matplotlib.pyplot as plt
 
 parser = argparse.ArgumentParser(description='Process some arguments')
-parser.add_argument('--model_name_or_path', type=str, default='deberta-v3-large')
+parser.add_argument('--model_name_or_path', type=str, default='microsoft/deberta-v3-large')
 parser.add_argument('--train_mark_path', type=str, default='./data/train_mark.csv')
 parser.add_argument('--train_features_path', type=str, default='./data/train_fts.json')
 parser.add_argument('--val_mark_path', type=str, default='./data/val_mark.csv')
@@ -277,7 +277,7 @@ training_args = TrainingArguments(
     output_dir='./',
     overwrite_output_dir=True,
     num_train_epochs=10,
-    per_device_train_batch_size=4,
+    per_device_train_batch_size=1,
     save_steps=10000,
     dataloader_num_workers=4,
     fp16=True,
@@ -291,6 +291,7 @@ trainer = Trainer(
 trainer.train()
 trainer.save_model('./')
 
+torch.save(model.state_dict(),f"pytorch_model.bin")
 
 # In[ ]:
 
