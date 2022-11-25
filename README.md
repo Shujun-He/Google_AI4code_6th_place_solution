@@ -38,7 +38,7 @@ change n_code in preprocess.py to 80\
 ### Relative to absolute position prediction
 
 
-![alt text](https://github.com/Shujun-He/Google_AI4code_6th_place_solution/blob/main/graphics/relative2absolute.png)
+![alt text](https://raw.githubusercontent.com/Shujun-He/Google_AI4code_6th_place_solution/main/graphics/relative2absolute.png)
 
 (I typed this in latex and just screenshot it. Sorry for the quality. For a better version, see `write_up_6th_solution.pdf`)
 
