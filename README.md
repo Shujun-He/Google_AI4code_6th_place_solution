@@ -87,10 +87,10 @@ inference. For my best inference notebook, a total of 3 inference cycles are use
 
 ### What didn’t work
 1. Trying to translate markdown cells that are not in English did not result in any improve-
-ments for me. I tried facebook’s m2m100 418M.\
+ments for me. I tried facebook’s m2m100 418M.
 2. Separating code and markdown cells and doing two forward passes through deberta for
-concatenated code and markdown cells.\
-3. Cubert did not work because I couldn’t fix the tokenizer.\
+concatenated code and markdown cells.
+3. Cubert did not work because I couldn’t fix the tokenizer.
 4. Maxpooling instead of meanpooling
 
 ### References
