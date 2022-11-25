@@ -60,9 +60,9 @@ the markdown cell is computed according to Equation 1. MAE loss is used during t
 
 The following features are used:
 
-1. number of markdown cells in given notebook (normalized by 128)\
-2. number of code cells in given notebook (normalized by 128)\
-3. ratio of markdown cells to total number of cells\
+1. number of markdown cells in given notebook (normalized by 128)
+2. number of code cells in given notebook (normalized by 128)
+3. ratio of markdown cells to total number of cells
 
 These features are concatenated with pooled feature vectors of markdown cells. Pooled code
 cells feature vectors are also concatenated with their absolute positions.
