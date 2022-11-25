@@ -54,7 +54,7 @@ to the sequence of code block feature vectors, and then an GRU network is used t
 relative position of that markdown block to each code blocks. Lastly, the absolute position of
 the markdown cell is computed according to Equation 1. MAE loss is used during training.
 
-![alt text](https://github.com/Shujun-He/Google_AI4code_6th_place_solution/blob/main/graphics/architecture.png)
+![alt text](https://raw.githubusercontent.com/Shujun-He/Google_AI4code_6th_place_solution/main/graphics/architecture.png)
 
 ### Features
 
